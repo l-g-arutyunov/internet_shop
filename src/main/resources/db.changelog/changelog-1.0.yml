@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - preCondition:
+      not:
+        tableExists:
+          - tableName:
+  - changeSet:
+      id: 1
+      author: larutyunov
+      changes:
+        - createTable:
+            tableName: CUSTOMERS
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: firstName
+                  type: VARCHAR(100)
+              - column:
+                  name: lastNme
+                  type: VARCHAR(100)
+              - column:
+                  name: sex
+                  type: BOOLEAN
+              - column:
+                  name: age
+                  type: NUMERIC
